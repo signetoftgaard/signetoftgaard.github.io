@@ -1,0 +1,6 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#C8E86A"/>
+  <rect x="30" y="30" width="740" height="440" rx="12" fill="#B4D840" stroke="#8FAF00" stroke-width="1"/>
+  <text x="400" y="225" font-family="sans-serif" font-size="22" fill="#3A5200" text-anchor="middle" font-weight="500">Earnormous — Project Image</text>
+  <text x="400" y="260" font-family="sans-serif" font-size="14" fill="#3A5200" text-anchor="middle">Replace with: project1-placeholder.jpg (800×500px)</text>
+</svg>
