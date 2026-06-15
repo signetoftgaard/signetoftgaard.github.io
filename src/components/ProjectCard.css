@@ -1,0 +1,231 @@
+/* ── Card ──────────────────────────────────────────────────── */
+.project-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: var(--delay, 0s);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent, var(--green));
+}
+
+/* ── Accent bar ─────────────────────────────────────────────── */
+.card-accent-bar {
+  height: 5px;
+  background: var(--accent, var(--green));
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── Placeholder ─────────────────────────────────────────────── */
+.placeholder-card {
+  opacity: 0.7;
+  background: repeating-linear-gradient(
+    45deg,
+    #f7fdf9,
+    #f7fdf9 8px,
+    #e8faf0 8px,
+    #e8faf0 16px
+  );
+}
+.placeholder-inner {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.placeholder-note {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ── Card Header ─────────────────────────────────────────────── */
+.card-header {
+  padding: 24px 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card-year {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, var(--green-dark));
+  background: color-mix(in srgb, var(--accent, var(--green)) 12%, transparent);
+  padding: 2px 10px;
+  border-radius: 100px;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 2px 9px;
+  border-radius: 100px;
+}
+.card-title {
+  font-family: var(--font-head);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-top: 4px;
+}
+.card-subtitle {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ── Card Body ───────────────────────────────────────────────── */
+.card-body {
+  padding: 20px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+.card-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  font-weight: 300;
+}
+
+/* ── Media ───────────────────────────────────────────────────── */
+.card-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 10px;
+}
+.media-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.media-img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+.media-figure figcaption {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ── Expand button ───────────────────────────────────────────── */
+.expand-btn {
+  align-self: flex-start;
+  background: none;
+  border: 1.5px solid var(--accent, var(--green));
+  color: var(--accent, var(--green-dark));
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  letter-spacing: 0.02em;
+}
+.expand-btn:hover {
+  background: var(--accent, var(--green));
+  color: white;
+}
+
+/* ── Expanded content ────────────────────────────────────────── */
+.card-expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeUp 0.3s ease both;
+  border-top: 1px dashed var(--border);
+  padding-top: 20px;
+}
+.details-section h3,
+.skills-section h3 {
+  font-family: var(--font-head);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.details-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.details-list li {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-mid);
+  font-weight: 300;
+  padding-left: 18px;
+  position: relative;
+}
+.details-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent, var(--green));
+  font-size: 0.85rem;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.skill-chip {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--accent, var(--green)) 12%, white);
+  color: color-mix(in srgb, var(--accent, var(--green)) 80%, var(--ink));
+  border: 1px solid color-mix(in srgb, var(--accent, var(--green)) 25%, transparent);
+}
