@@ -11,6 +11,11 @@ export interface MediaItem {
   caption?: string;
 }
 
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -22,6 +27,7 @@ export interface Project {
   details: string[];
   skills: string[];
   media: MediaItem[];
+  links?: ProjectLink[];
   accentColor?: string;
   placeholder?: boolean;
 }
@@ -85,6 +91,12 @@ export const projects: Project[] = [
       'STABLE rehabilitation protocol',
     ],
     media: [],
+    links: [
+      {
+        label: 'Published workshop paper (IEEE VR 2025)',
+        url: 'https://ieeexplore.ieee.org/abstract/document/10972394',
+      },
+    ],
   },
   {
     id: 'vr-tablet-workshop',
@@ -130,7 +142,7 @@ export const projects: Project[] = [
   {
     id: 'seaquest',
     title: 'SeaQuest',
-    subtitle: 'Coming soon — add your description',
+    subtitle: 'Coming soon',
     year: '',
     tags: [],
     tabs: ['software'],
@@ -144,12 +156,12 @@ export const projects: Project[] = [
   {
     id: 'design-placeholder',
     title: 'Design / UI Work',
-    subtitle: 'Upload your images to populate this tab',
+    subtitle: 'To be updated',
     year: '',
     tags: ['UI/UX', 'Design'],
     tabs: ['design'],
     accentColor: '#a8dadc',
-    description: 'This tab is ready for your design and UI work. Add images and project descriptions to showcase your visual design skills.',
+    description: 'PROJECTS COMING SOON',
     details: [],
     skills: [],
     media: [],

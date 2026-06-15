@@ -113,6 +113,26 @@ export default function ProjectCard({ project, index }: Props) {
                 </div>
               </div>
             )}
+
+            {project.links && project.links.length > 0 && (
+              <div className="links-section">
+                <h3>Research links</h3>
+                <ul className="project-links">
+                  {project.links.map(link => (
+                    <li key={link.url}>
+                      <a
+                        className="project-link"
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         )}
       </div>

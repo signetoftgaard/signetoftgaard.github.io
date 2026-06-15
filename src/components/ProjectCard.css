@@ -185,7 +185,8 @@
   padding-top: 20px;
 }
 .details-section h3,
-.skills-section h3 {
+.skills-section h3,
+.links-section h3 {
   font-family: var(--font-head);
   font-size: 0.88rem;
   font-weight: 700;
@@ -228,4 +229,22 @@
   background: color-mix(in srgb, var(--accent, var(--green)) 12%, white);
   color: color-mix(in srgb, var(--accent, var(--green)) 80%, var(--ink));
   border: 1px solid color-mix(in srgb, var(--accent, var(--green)) 25%, transparent);
+}
+
+.project-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-link {
+  color: var(--accent, var(--green-dark));
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-link:hover {
+  text-decoration: underline;
 }
