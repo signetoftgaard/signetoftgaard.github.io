@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Oswald:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
@@ -16,6 +16,7 @@
   --shadow-hover: 0 12px 40px rgba(30,140,71,0.18);
   --radius: 16px;
   --font-head: 'Syne', sans-serif;
+  --font-card-title: 'Oswald', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 }
 

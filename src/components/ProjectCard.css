@@ -88,12 +88,12 @@
   border-radius: 100px;
 }
 .card-title {
-  font-family: var(--font-head);
+  font-family: var(--font-card-title);
   font-size: 1.45rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: var(--ink);
-  line-height: 1.15;
+  line-height: 1.25;
   margin-top: 4px;
 }
 .card-subtitle {
