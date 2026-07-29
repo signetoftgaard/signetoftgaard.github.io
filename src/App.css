@@ -179,6 +179,108 @@ body {
   max-width: 520px;
 }
 
+/* ── Landing / Home ─────────────────────────────────────────── */
+.landing {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 250, 240, 0.9));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: clamp(22px, 3.2vw, 42px);
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.5s ease both;
+}
+
+.landing-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-kicker {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.landing-title {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+.landing-text {
+  color: var(--ink-mid);
+  font-size: 1.03rem;
+  line-height: 1.65;
+  max-width: 62ch;
+  margin-bottom: 12px;
+}
+
+.landing-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.landing-btn {
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink-mid);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.landing-btn:hover {
+  background: var(--green-pale);
+  border-color: var(--green);
+  color: var(--green-dark);
+}
+
+.landing-btn.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.landing-btn.primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: #fff;
+}
+
+.landing-image-placeholder {
+  border: 1.5px dashed #8fd2aa;
+  border-radius: 18px;
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(59, 191, 110, 0.22), transparent 42%),
+    radial-gradient(circle at 80% 80%, rgba(244, 162, 97, 0.22), transparent 44%),
+    #f9fffc;
+}
+
+.landing-image-placeholder span {
+  color: var(--ink-soft);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
 /* ── Projects Grid ───────────────────────────────────────────── */
 .projects-grid {
   display: grid;
@@ -216,4 +318,10 @@ body {
 @media (max-width: 768px) {
   .header-inner { padding: 12px 20px; }
   .main { padding: 32px 20px 60px; }
+  .landing {
+    grid-template-columns: 1fr;
+  }
+  .landing-image-placeholder {
+    min-height: 220px;
+  }
 }

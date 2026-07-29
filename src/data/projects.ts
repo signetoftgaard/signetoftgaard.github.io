@@ -23,6 +23,7 @@ export interface Project {
   year: string;
   tags: string[];
   tabs: Tab[];
+  order?: Partial<Record<Tab, number>>;
   description: string;
   details: string[];
   skills: string[];
@@ -74,6 +75,9 @@ export const projects: Project[] = [
         url: 'https://www.sciencedirect.com/science/article/pii/S0165587625004483',
       },
     ],
+    order: {
+      academic: 1,
+    },
   },
   {
     id: 'balance-rehab',
@@ -179,13 +183,16 @@ export const projects: Project[] = [
     accentColor: '#457b9d',
     description: 'A game designed to familiarize children in primary school with the ocean and the importance of seagrass in marine ecosystems. Developed as part of an Erasmus+ project in collaboration with organizations across Europe.',
     details: [],
-    skills: [],
+    skills: ['Blender 3D modeling', 'Unity game development', 'Educational game design', 'Cross-platform development (VR + Tablet)', 'Collaborative international project'],
     media: [{
         type: 'youtube',
         src: 'https://youtu.be/dpicCUdGaU8',
         caption: 'SEAQUEST Tablet gameplay walkthrough',
       },],
-    placeholder: true,
+    placeholder: false,
+    order: {
+      academic: 2,
+    },
   },
   {
     id: 'design-placeholder',
@@ -200,5 +207,34 @@ export const projects: Project[] = [
     skills: [],
     media: [],
     placeholder: true,
+  },
+  {
+    id: 'design-bulletin-board',
+    title: 'Bulletin Board App',
+    subtitle: 'Bulletin Board for Personal Wallpapers',
+    year: '',
+    tags: ['UI/UX', 'Design', 'Figma', 'Personal Project'],
+    tabs: ['design'],
+    accentColor: '#a8dadc',
+    description: 'Personal project: I wanted to have an application where I could design my own personal bulletin board and export it as a wallpaper for my computer. The app is being designed in Figma and implemented in React + TypeScript.',
+    details: ['Idea: Create a bulletin board app, where you can design your own personal bulletin board.',
+      'Design goals: The board should look and feel like a real bulletin board, with a cork texture and the ability to pin polaroid images and notes. I wanted it to feel old school and nostalgic, while still being modern and user-friendly.',
+      'Functionality: Users should be able to upload images, add notes, and arrange them on the board. The board can then be exported as a wallpaper for personal use. To avoid having to host any information about the users, images should be stored locally on the users device and the layout should be saved in the browser\'s local storage. Though this will require the user to upload their images each time, the benefit of the privacy outweighs the inconvenience.',
+      'Process: I am using Figma to create the UI/UX design.',
+      'Implementation: The app is being implemented using React and TypeScript. Currently you can add images with titles and move them around. The next step is adding functionality to download your wallpaper.',
+    ],
+    skills: ['UI/UX design', 'Figma', 'React', 'TypeScript'],
+    media: [      {
+        type: 'image',
+        src: 'public/images/FigmaDesign.png',
+        caption: 'Bulletin Board App Initial Design in Figma',
+      },
+      {
+        type: 'image',
+        src: 'public/images/ReactApplication.png',
+        caption: 'Bulletin Board App Initial Implementation in React + TypeScript',
+      }
+    ],
+    placeholder: false,
   },
 ];

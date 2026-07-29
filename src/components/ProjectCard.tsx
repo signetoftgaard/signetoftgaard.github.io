@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import type { Project } from '../data/projects';
-import './ProjectCard.css';
+import React, { useState } from "react";
+import type { Project } from "../data/projects";
+import "./ProjectCard.css";
 
 interface Props {
   project: Project;
@@ -8,9 +8,9 @@ interface Props {
 }
 
 function YoutubeEmbed({ src }: { src: string }) {
-  const id = src.includes('youtu.be/')
-    ? src.split('youtu.be/')[1].split('?')[0]
-    : src.split('v=')[1]?.split('&')[0];
+  const id = src.includes("youtu.be/")
+    ? src.split("youtu.be/")[1].split("?")[0]
+    : src.split("v=")[1]?.split("&")[0];
   return (
     <div className="video-wrapper">
       <iframe
@@ -26,19 +26,26 @@ function YoutubeEmbed({ src }: { src: string }) {
 
 export default function ProjectCard({ project, index }: Props) {
   const [expanded, setExpanded] = useState(false);
-  const accent = project.accentColor ?? '#4caf7d';
+  const accent = project.accentColor ?? "#4caf7d";
 
   if (project.placeholder) {
     return (
       <div
         className="project-card placeholder-card"
-        style={{ '--accent': accent, '--delay': `${index * 0.08}s` } as React.CSSProperties}
+        style={
+          {
+            "--accent": accent,
+            "--delay": `${index * 0.08}s`,
+          } as React.CSSProperties
+        }
       >
         <div className="card-accent-bar" />
         <div className="placeholder-inner">
           <h2 className="card-title">{project.title}</h2>
           <p className="placeholder-note">{project.subtitle}</p>
-          {project.description && <p className="card-desc">{project.description}</p>}
+          {project.description && (
+            <p className="card-desc">{project.description}</p>
+          )}
         </div>
       </div>
     );
@@ -46,8 +53,13 @@ export default function ProjectCard({ project, index }: Props) {
 
   return (
     <article
-      className={`project-card ${expanded ? 'expanded' : ''}`}
-      style={{ '--accent': accent, '--delay': `${index * 0.08}s` } as React.CSSProperties}
+      className={`project-card ${expanded ? "expanded" : ""}`}
+      style={
+        {
+          "--accent": accent,
+          "--delay": `${index * 0.08}s`,
+        } as React.CSSProperties
+      }
     >
       <div className="card-accent-bar" />
 
@@ -55,8 +67,10 @@ export default function ProjectCard({ project, index }: Props) {
         <div className="card-meta">
           <span className="card-year">{project.year}</span>
           <div className="card-tags">
-            {project.tags.map(tag => (
-              <span key={tag} className="tag">{tag}</span>
+            {project.tags.map((tag) => (
+              <span key={tag} className="tag">
+                {tag}
+              </span>
             ))}
           </div>
         </div>
@@ -71,13 +85,26 @@ export default function ProjectCard({ project, index }: Props) {
         {project.media.length > 0 && (
           <div className="card-media">
             {project.media.map((m, i) => {
-              if (m.type === 'youtube') return <YoutubeEmbed key={i} src={m.src} />;
-              if (m.type === 'image') return (
-                <figure key={i} className="media-figure">
-                  <img src={m.src} alt={m.alt ?? ''} className="media-img" />
-                  {m.caption && <figcaption>{m.caption}</figcaption>}
-                </figure>
-              );
+              if (m.type === "youtube")
+                return <YoutubeEmbed key={i} src={m.src} />;
+              if (m.type === "video") {
+                return (
+                  <figure key={i} className="media-figure">
+                    <video className="media-img" controls preload="metadata">
+                      <source src={m.src} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    {m.caption && <figcaption>{m.caption}</figcaption>}
+                  </figure>
+                );
+              }
+              if (m.type === "image")
+                return (
+                  <figure key={i} className="media-figure">
+                    <img src={m.src} alt={m.alt ?? ""} className="media-img" />
+                    {m.caption && <figcaption>{m.caption}</figcaption>}
+                  </figure>
+                );
               return null;
             })}
           </div>
@@ -86,10 +113,10 @@ export default function ProjectCard({ project, index }: Props) {
         {/* Expand toggle */}
         <button
           className="expand-btn"
-          onClick={() => setExpanded(e => !e)}
+          onClick={() => setExpanded((e) => !e)}
           aria-expanded={expanded}
         >
-          {expanded ? '↑ Show less' : '↓ Read more'}
+          {expanded ? "↑ Show less" : "↓ Read more"}
         </button>
 
         {expanded && (
@@ -107,8 +134,10 @@ export default function ProjectCard({ project, index }: Props) {
               <div className="skills-section">
                 <h3>Skills & Technologies</h3>
                 <div className="skills-grid">
-                  {project.skills.map(s => (
-                    <span key={s} className="skill-chip">{s}</span>
+                  {project.skills.map((s) => (
+                    <span key={s} className="skill-chip">
+                      {s}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -118,7 +147,7 @@ export default function ProjectCard({ project, index }: Props) {
               <div className="links-section">
                 <h3>Research links</h3>
                 <ul className="project-links">
-                  {project.links.map(link => (
+                  {project.links.map((link) => (
                     <li key={link.url}>
                       <a
                         className="project-link"
